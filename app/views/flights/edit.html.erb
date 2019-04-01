@@ -1,0 +1,26 @@
+<h1>Edit Flight</h1>
+
+<p>
+  <%= link_to "Back", @flight %>
+</p>
+
+<%= form_for @flight do |f| %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :date %><br>
+    <%= f.datetime_field :date %>
+  </p>
+  <p>
+    <%= f.label :destination %><br>
+    <%= f.text_field :destination %>
+  </p>
+  <%= f.select :airline_id, Airline.all.collect {|f| [f.name, f.id]}%>
+  <%= collection_select(:flight, :passenger_ids, Passenger.all, :id, :name, {prompt: false}, {:multiple => true} )%>
+  
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

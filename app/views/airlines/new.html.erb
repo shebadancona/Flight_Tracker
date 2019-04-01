@@ -1,0 +1,10 @@
+<h1>Add an Airline</h1>
+<%= form_for @airline do |airline| %>
+  <p>
+    <%= airline.label :name %><br>
+    <%= airline.text_field :name %>
+  </p>
+  <p>
+    <%= airline.submit "Save" %>
+  </p>
+<% end %>

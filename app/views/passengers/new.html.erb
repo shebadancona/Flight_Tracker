@@ -1,0 +1,18 @@
+<h1>Passengers</h1>
+
+<%= form_for @passenger do |passenger| %>
+    <p>
+      <%= passenger.label :name %><br>
+      <%= passenger.text_field :name %>
+    </p>
+    <p>
+    <%= passenger.label :status %><br>
+    <%= passenger.text_field :status %>
+  </p>
+  
+
+    <p>
+      <%= passenger.submit "Save" %>
+    </p>
+
+    <% end %>

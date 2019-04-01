@@ -1,0 +1,21 @@
+<h1>FLIGHTS</h1>
+
+<% @flights.each do |flight| %>
+   
+<div class = "flight_details">
+<%= image_tag(flight.airline.image_url)%>
+<p class = "name"><%=flight.airline.name%></p>
+    <p><%=flight.name%></p>
+    <p><%=flight.destination%></p>
+    <p><%=flight.date%></p>
+    <p class = "edit_button"><%=link_to "edit", edit_flight_path(flight)%><p>
+    </div>
+     <%end%>
+
+      
+    <%=link_to "Create New Flight", new_flight_path%>
+
+    </div>
+
+
+

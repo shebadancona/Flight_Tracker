@@ -1,0 +1,22 @@
+<h1>Flights#new</h1>
+<%= form_for @flight do |flight| %>
+    <p>
+      <%= flight.label :name %><br>
+      <%= flight.text_field :name %>
+    </p>
+    <p>
+    <%= flight.label :date %><br>
+    <%= flight.datetime_field :date %>
+  </p>
+  <p>
+  <%= flight.label :destination %><br>
+  <%= flight.text_field :destination %>
+</p>
+    <%= flight.select :airline_id, Airline.all.collect {|f| [f.name, f.id]}%>
+    <%= collection_select(:flight, :passenger_ids, Passenger.all, :id, :name, {prompt: false}, {:multiple => true} )%>
+    
+    <p>
+      <%= flight.submit "Save" %>
+    </p>
+
+    <% end %>

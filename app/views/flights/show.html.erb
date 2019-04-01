@@ -1,0 +1,9 @@
+<h1>Flight</h1>
+ 
+ <p>Airline: <%=@flight.airline.name%></p>
+<p>Name: <%=@flight.name%></p>
+<p>Date: <%=@flight.date%></p>
+<p>Destination: <%=@flight.destination%></p>
+
+<p><%=link_to "Passengers", show_passengers_flight_path(@flight) %></p>
+<p><%=link_to "Crew Members",show_crew_members_flight_path(@flight)%></p>

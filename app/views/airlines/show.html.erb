@@ -1,0 +1,8 @@
+<h1>Airlines#show</h1>
+
+
+<h2><%=@airline.name%></h2>
+<% @airline.flights.each do |flight| %>
+<p>Name: <%=link_to flight.name, flight_path(flight)%></p>
+<p>****</p>
+<% end %>

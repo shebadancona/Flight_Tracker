@@ -1,0 +1,7 @@
+
+     <%airline.flights.each do |flight|%>
+        <h3>Flight Info</h3>
+        <p><%=flight.name%></p>
+        <p><%=flight.destination%></p>
+        <p><%=flight.date%></p>
+        <%end%>
